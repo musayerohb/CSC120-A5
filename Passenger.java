@@ -25,7 +25,11 @@ public class Passenger {
          * Calls the addPassenger method from the Car class to add passengers' information to the train once they board.
          * @param c The train car the passenger is entering.
          */
-        c.addPassenger(this);
+        try {
+            c.addPassenger(this);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public void getOffCar(Car c) {
@@ -33,7 +37,11 @@ public class Passenger {
          * Calls the removePassenger method from the Car class to remove passengers' information from the train once they leave.
          * @param c The train car the passenger is leaving.
          */
-        c.removePassenger(this);     
+        try {
+            c.removePassenger(this);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }     
     }
     
 

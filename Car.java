@@ -8,14 +8,14 @@ public class Car {
     private ArrayList<Passenger> passengers_onboard;
     private int maximum_capacity;
 
-    public Car(ArrayList<String> passengers_onboard, int maximum_capacity) {
+    public Car(int maximum_capacity) {
         /**
          * Stores the amount of people on the train in am array list and the maxiumum capacity in a variable.
          * @param passengers_onboard The numeber of passengers on the train.
          * @param maximum_capacity The maximum number of people that can be on the train at once.
          */
         this.maximum_capacity = maximum_capacity;
-        this.passengers_onboard = new ArrayList<Passenger>(maximum_capacity);
+        this.passengers_onboard = new ArrayList<Passenger>();
 
     }
 
@@ -73,14 +73,12 @@ public class Car {
          * Prints a list of all passengers in a car. If no passengers are in the car, it prints that the car is empty.
          */
         for (int i=0; i<this.passengers_onboard.size(); i++){
-            //ArrayList <String> manifest = new ArrayList<String>();
-            System.out.println(passengers_onboard.get(i).get_Passeger_name());
+            System.out.println(passengers_onboard.get(i).get_Passeger_name()); //passengers_onboard[0].name
         }
         if (passengers_onboard.size() == 0) {
             System.out.println("This car is EMPTY.");
         }
-        
- 
+         
     }
 
 }
