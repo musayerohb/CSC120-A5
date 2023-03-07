@@ -4,7 +4,7 @@ public class Engine {
      */
     private FuelType fuel_type;
     private double maximum_fuel_level;
-    public double current_fuel_level;
+    private double current_fuel_level;
 
     public Engine(FuelType fuel_type, double maximum_fuel_level){
         /** 
@@ -16,6 +16,16 @@ public class Engine {
         this.fuel_type = fuel_type;
         this.maximum_fuel_level = maximum_fuel_level;
         this.current_fuel_level = maximum_fuel_level;
+    }
+
+    public double getMaximum_fuel_level() {
+        /*DOC */
+        return this.maximum_fuel_level;
+    }
+
+    public double getCurrent_fuel_level() {
+        /*DOC */
+        return this.current_fuel_level;
     }
 
     public void go() {
@@ -36,7 +46,6 @@ public class Engine {
         /**
          * Refuels the train, setting the train's current fuel level to its maximum.
          */
-        //make boolean statement for when current fuel level is already equal to the max fuel level?
         this.current_fuel_level = this.maximum_fuel_level;
     }
 

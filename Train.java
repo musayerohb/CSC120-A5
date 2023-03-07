@@ -72,13 +72,12 @@ public class Train {
          * DO ONCE THIS METHOD IS COMPLETE.
          */
         for (int i=0; i<this.Cars_currently_attached.size(); i++){ 
-            Cars_currently_attached.get(i).printManifest(); //select the list of attached cars, select the car within the list, select that car's passenger list, and then get the name of each passenger in the list
+            Cars_currently_attached.get(i).printManifest();
         }
     }
 
 
     public static void main(String[] args) {
-        //Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 15.0);
         Train newTrain = new Train(FuelType.ELECTRIC, 100.0, 3, 15);
         newTrain.Cars_currently_attached.add(new Car(10));
         try {
@@ -86,24 +85,31 @@ public class Train {
                 newTrain.engine.go();
             }
         } catch (Exception e) {
-            System.err.println(e.getMessage()); // Out of fuel (what is this line supposed to do after throwing the exception in engine.java?)
+            System.err.println(e.getMessage());
         }
-        //Car my_first_car = new Car(null, 10);
+        newTrain.engine.refuel();
+        System.out.println(newTrain.engine.getCurrent_fuel_level());
+
         Passenger bob = new Passenger("Billy Bob Sr.");
+        Passenger bobjr = new Passenger("Billy Bob jr");
+
         newTrain.Cars_currently_attached.get(0).addPassenger(bob);
+        newTrain.Cars_currently_attached.get(1).addPassenger(bobjr);
+        newTrain.Cars_currently_attached.get(1).removePassenger(bobjr);
         System.out.println(newTrain.getMaxCapacity());
         System.out.println(newTrain.seatsRemaining());
         newTrain.printManifest();
-        // bob.boardCar(my_first_car);
-        // bob.boardCar(my_first_car); // will throw the exception where passenger is already onboard car
-        // bob.getOffCar(my_first_car);
-        // bob.getOffCar(my_first_car); // will throw the exception where passenger is not onboard car, so can't be removed from there.
-        // my_first_car.addPassenger(bob);
-        // System.out.println("Passenger added.");
-        // my_first_car.printManifest();
-        // my_first_car.removePassenger(bob);
-        // System.out.println("Passenger kicked out.");
-        // my_first_car.printManifest();
+
+        Car my_first_car = new Car(10);
+        bobjr.boardCar(my_first_car);
+        bobjr.boardCar(my_first_car); // will throw the exception where passenger is already onboard car
+        bobjr.getOffCar(my_first_car);
+        bobjr.getOffCar(my_first_car); // will throw the exception where passenger is not onboard car, so can't be removed from there.
+        my_first_car.addPassenger(bobjr);
+        my_first_car.printManifest();
+        my_first_car.removePassenger(bobjr);
+        System.out.println("Passenger kicked out.");
+        my_first_car.printManifest();
         
     }
 
