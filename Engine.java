@@ -19,12 +19,18 @@ public class Engine {
     }
 
     public double getMaximum_fuel_level() {
-        /*DOC */
+        /**
+         * Getter for the maximum fuel level method.
+         * @return the maximum fuel level of the train.
+         */
         return this.maximum_fuel_level;
     }
 
     public double getCurrent_fuel_level() {
-        /*DOC */
+        /**
+         * Getter for the current fuel level method.
+         * @return The current fuel level of the train.
+         */
         return this.current_fuel_level;
     }
 

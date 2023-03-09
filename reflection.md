@@ -2,3 +2,9 @@ Use this file to record your reflection on this assignment.
 
 - What are your initial impressions of how `Association` affects your programming?
 - What worked, what didn't, what advice would you give someone taking this course in the future?
+
+    Association affects my programming because I have to visualize how my programming works much differently compared to just procedural coding. For example, my Car and Passenger class have just an association relationship with each other; which means that they can both pretty much act independently of one another without impacting the functionality of either. However, the Engine and Train have a composition association, where the Engine is essential to the Train's function, so I had to make sure that I created an Engine attribute for the Train class and then an Engine object when testing out the train. It affects the way I think about how each class and object is related to each other and how I should build methods for them. 
+
+    What is really working for this course so far is visualizing what I'm doing, or writing psuedocode for it. Especially if I'm working with someone else on an assignment, it's very helpful to explain things to both yourself and the other person by writing it down instead of saying it. Definitely write psuedocode, however you write it, if you're confused about something or trying to ask for help, it helps you figure out what you're supposed to do much quicker. This also goes with the warning that you shouldn't keep things in your head, that's one way for me to lose my train of thought really quick. Best to just write it down if I'm confused. 
+
+    For someone taking this course in the future, I highly advise working with someone else on the assignments. It was much easier for us to debug both our programs through pair programming.

@@ -5,17 +5,17 @@ public class Car {
      * Contains Passenger class objects.
      * @param arguments The program's arguments
      */
-    private ArrayList<Passenger> passengers_onboard;
-    private int maximum_capacity;
+    private ArrayList<Passenger> passengersOnboard;
+    private int maximumCapacity;
 
-    public Car(int maximum_capacity) {
+    public Car(int maximumCapacity) {
         /**
          * Stores the amount of people on the train in am array list and the maxiumum capacity in a variable.
-         * @param passengers_onboard The numeber of passengers on the train.
-         * @param maximum_capacity The maximum number of people that can be on the train at once.
+         * @param passengersOnboard The numeber of passengers on the train.
+         * @param maximumCapacity The maximum number of people that can be on the train at once.
          */
-        this.maximum_capacity = maximum_capacity;
-        this.passengers_onboard = new ArrayList<Passenger>();
+        this.maximumCapacity = maximumCapacity;
+        this.passengersOnboard = new ArrayList<Passenger>();
 
     }
 
@@ -24,7 +24,7 @@ public class Car {
          * Getter for the maximum capacity of people on the train.
          * @return The maximum number of people that can be on the train at once.
          */
-        return this.maximum_capacity;
+        return this.maximumCapacity;
     }
 
     public int seatsRemaining(){
@@ -32,7 +32,7 @@ public class Car {
          * Calculates and returns the number of remaining seats available on the train.
          * @return The remaining number of seats available for passengers.
          */
-        return (this.maximum_capacity - this.passengers_onboard.size());
+        return (this.maximumCapacity - this.passengersOnboard.size());
     }
 
     public void addPassenger(Passenger p){
@@ -44,11 +44,11 @@ public class Car {
          */
         if (this.seatsRemaining() == 0) {
             throw new RuntimeException("This car is full.");
-        } else if (this.passengers_onboard.contains(p)) {
+        } else if (this.passengersOnboard.contains(p)) {
             throw new RuntimeException("This passenger is already onboard this car!");
         }
         else{
-            this.passengers_onboard.add(p);
+            this.passengersOnboard.add(p);
             this.seatsRemaining();
         }
     }
@@ -57,13 +57,13 @@ public class Car {
         /**
          * Removes passengers from the train. If a passenger is not on the train, an exception is thrown.
          * @param p The passenger being removed.
-         * @throws RuntimeException If the information of the passenger being removed does not exist in the passengers_onboard list.
+         * @throws RuntimeException If the information of the passenger being removed does not exist in the passengersOnboard list.
          */
-        if (this.passengers_onboard.contains(p) == false) {
+        if (this.passengersOnboard.contains(p) == false) {
             throw new RuntimeException("The passenger is not onboard this car!");
         }
         else{
-            passengers_onboard.remove(p);
+            passengersOnboard.remove(p);
             this.seatsRemaining();
         }
     }
@@ -72,10 +72,10 @@ public class Car {
         /**
          * Prints a list of all passengers in a car. If no passengers are in the car, it prints that the car is empty.
          */
-        for (int i=0; i<this.passengers_onboard.size(); i++){
-            System.out.println(passengers_onboard.get(i).get_Passeger_name()); //passengers_onboard[0].name
+        for (int i=0; i<this.passengersOnboard.size(); i++){
+            System.out.println(passengersOnboard.get(i).get_Passeger_name()); //passengersOnboard[0].name
         }
-        if (passengers_onboard.size() == 0) {
+        if (passengersOnboard.size() == 0) {
             System.out.println("This car is EMPTY.");
         }
          

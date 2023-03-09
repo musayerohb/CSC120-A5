@@ -35,7 +35,7 @@ public class Train {
         /**
         * The getter for the Car class.
         * @throws RuntimeException When the value of i exceeds the amount of cars currently attached to the train.
-        * @return The methods within the Car class.
+        * @return The cars currently attached to the train.
         */
         if (i>Cars_currently_attached.size()) {
             throw new RuntimeException("'i' value is out of range! The train doesn't have this many cars. It actually has" + Cars_currently_attached.size() + "cars .");
@@ -46,7 +46,7 @@ public class Train {
     public int getMaxCapacity() {
         /**
         * The getter for the getMaxCapacity method.
-        * WILL ADD PARAMS AND STUFF ONCE DONE
+        * @return The maximum capacity of all the train cars.
         */
         int getMaxCapacity_value = 0; 
         for (int i=0; i<Cars_currently_attached.size(); i++) {
@@ -58,7 +58,7 @@ public class Train {
     public int seatsRemaining() {
          /**
         * The getter for the getMaxCapacity method.
-        * WILL ADD PARAMS AND STUFF ONCE DONE
+        * @return The seats remaining in the train car.
         */
         int seatsRemaining_value = 0; 
         for (int i=0; i<Cars_currently_attached.size(); i++) {
@@ -69,7 +69,7 @@ public class Train {
 
     public void printManifest() {
         /**
-         * DO ONCE THIS METHOD IS COMPLETE.
+         * Prints the names of all the passengers onboard each train car.
          */
         for (int i=0; i<this.Cars_currently_attached.size(); i++){ 
             Cars_currently_attached.get(i).printManifest();
@@ -116,4 +116,3 @@ public class Train {
     
 
 }
-

@@ -43,6 +43,4 @@ public class Passenger {
             System.err.println(e.getMessage());
         }     
     }
-    
-
 }
